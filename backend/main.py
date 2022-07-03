@@ -17,34 +17,13 @@ app.add_middleware(
 
 @app.get("/")
 async def root():
-    return "Hello World"
+    return "HK"
 
+
+@app.put("/api/todo")
+async def get_todo():
+    return "Recieved"
 
 @app.get("/api/todo")
-async def get_todo():
-    return 1
-
-
-@app.get("/api/todo{id}")
-async def get_todo_by_id(id: str):
-    return id
-
-
-@app.post("/api/todo")
-async def post_todo(todo):
-    return 1
-
-
-@app.put(f"/api/todo{id}")
-async def put_todo(id, data):
-    return id, data
-
-
-@app.post("/api/todo")
-async def post_todo(todo):
-    return todo
-
-
-@app.delete(f"/api/todo{id}")
-async def put_todo(id, data):
-    return id, data
+async def not_page():
+    return "Not A page"
