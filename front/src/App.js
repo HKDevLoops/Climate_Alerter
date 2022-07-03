@@ -1,34 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
-import {useEffect, useState} from "react";
-import axios from "axios";
-
+import logo from "./logo.svg";
+import Login from "./pages/login/Login";
+import Navbar from "./components/navbar/Navbar";
+import News from "./pages/news/News";
+// import Home from "./components/navbar/home/Home";
+import Home from "./components/home/Home";
+import Footer from "./components/footer/Footer";
+import Facts from "./components/facts/Facts";
+import Register from "./pages/register/register";
+import { Routes, Route } from "react-router-dom";
+import { formHelperTextClasses } from "@mui/material";
+// import Login from "./pages/login/Login";
 function App() {
-  const [result, setresult] = useState(null);
-    const app = async () => {
-        try {
-            let res = await axios.get("http://localhost:8000/api/todo");
-            let result = res.data;
-            setresult(result);
-        }catch (e){
-            console.log(e);
-        }
-    };
-    useEffect(() => {
-       app();
-    }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          {result}
-
-
-      </header>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/facts" element={<Facts />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
