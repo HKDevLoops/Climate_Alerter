@@ -23,8 +23,3 @@ async def root():
 @app.post("/register")
 async def get_todo():
     return "Recieved"
-
-
-@app.get("/api/todo")
-async def not_page():
-    return "Not A page"

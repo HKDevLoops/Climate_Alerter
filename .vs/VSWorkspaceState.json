@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\backend",
+    "\\backend\\api",
     "\\front"
   ],
-  "SelectedNode": "\\backend\\main.py",
+  "SelectedNode": "\\backend\\api\\air_quality_api.py",
   "PreviewInSolutionExplorer": false
 }

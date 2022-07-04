@@ -13,7 +13,7 @@ export default function Message(){
         }
     };
     useEffect(() => {
-       message()
+       message().then(r => console.log(r))
     }, []);
     return(
         <div>
