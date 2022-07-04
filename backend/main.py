@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from .api.open_api import open_weather_api
 # App opbject
 app = FastAPI()
 
@@ -23,3 +23,8 @@ async def root():
 @app.post("/register")
 async def get_todo():
     return "Recieved"
+
+
+@app.get("/aqi")
+async def open_weather_api():
+    open_weather_api()
