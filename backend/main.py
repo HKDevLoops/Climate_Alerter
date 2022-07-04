@@ -20,9 +20,10 @@ async def root():
     return "HK"
 
 
-@app.put("/api/todo")
+@app.post("/register")
 async def get_todo():
     return "Recieved"
+
 
 @app.get("/api/todo")
 async def not_page():
