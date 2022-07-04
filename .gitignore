@@ -7,3 +7,5 @@ node_modules
 .vscode-test
 .vscode-test-data
 .vscode-test-data-temp
+.vs
+*\.idea
