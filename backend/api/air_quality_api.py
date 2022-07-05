@@ -2,10 +2,11 @@ import requests
 import geocoder
 import dotenv
 import os
+import json
 import pandas as pd
 
 dotenv.load_dotenv("apis.env")
-air_quality = os.environ.get("open_weather_one_call")
+air_quality = os.environ.get("open_air_pollution")
 latitude = geocoder.ip("me").latlng[0]
 longitude = geocoder.ip("me").latlng[1]
 print(geocoder.ip("me").city)
@@ -19,7 +20,7 @@ def air_pollution_forecast():
     print(responses.json())
     print(responses1.json())
     print(pd.Series(responses1.json())[1])
-    return responses.json()
+    return json.dumps(responses.json())
 
 
 if __name__ == '__main__':

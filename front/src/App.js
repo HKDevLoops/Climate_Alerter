@@ -8,6 +8,9 @@ import Facts from "./components/facts/Facts";
 import Register from "./pages/register/register";
 import { Routes, Route } from "react-router-dom";
 import Message from "./Message";
+// import AQI from ".pages/aqi/AQI.js";
+
+import { AQI } from "./pages/aqi/AQI"
 // import Login from "./pages/login/Login";
 function App() {
   return (
@@ -20,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/message" element={<Message />} />
+        <Route path="/aqi" element={<AQI />} />
       </Routes>
       <Footer />
     </div>
