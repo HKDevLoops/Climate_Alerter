@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+
 import Login from "./pages/login/Login";
 import Navbar from "./components/navbar/Navbar";
 import News from "./pages/news/News";
@@ -8,8 +8,9 @@ import Footer from "./components/footer/Footer";
 import Facts from "./components/facts/Facts";
 import Register from "./pages/register/register";
 import { Routes, Route } from "react-router-dom";
-import { formHelperTextClasses } from "@mui/material";
-// import Login from "./pages/login/Login";
+
+import AQI from "./pages/aqi/AQI";
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/facts" element={<Facts />} />
+        <Route path="/aqi" element={<AQI />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
