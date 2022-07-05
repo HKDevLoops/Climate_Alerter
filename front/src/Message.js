@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-
 export default function Message(){
     const [result, setresult] = useState(null);
     const message = async () => {
