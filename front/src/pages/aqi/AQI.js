@@ -17,8 +17,7 @@ export function AQI(){
     }, []);
     return(
         console.log(result)
-        
-        )
+    )
     // const [todos, setTodos] = useState(null)
     // const fetchTodos = async () => {
     //     const response = await fetch("http://localhost:8000/aqi");
