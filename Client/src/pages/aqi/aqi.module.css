@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+.top{
+    background-color: blue;
+}
+
+.bottom{
+    display: flex;
+
+}
+.left{
+    flex: 1;
+    background-color: brown;
+
+}
+.right{
+    flex: 1;
+    background-color: black;
+
+}

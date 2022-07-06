@@ -4,9 +4,13 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
+
 const Footer = () => {
   return (
     <div className={classes.container}>
+    <div className={classes.header}>
+      Connect With Us
+    </div>
       <div className={classes.wrapper}>
         <InstagramIcon
           style={{ fontSize: "40px", margin: 10, color: "#e95950" }}

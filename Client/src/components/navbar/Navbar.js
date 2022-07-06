@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./navbar.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
@@ -13,7 +14,14 @@ const Navbar = () => {
         </div>
         <div className={classes.right}>
           <div className={classes.link}>
-            <h2>News Feed</h2>
+            <Link to="/aqi" style={{ textDecoration: "none" }}>
+              <h2>AQI Data</h2>
+            </Link>
+          </div>
+          <div className={classes.link}>
+            <Link to="/news" style={{ textDecoration: "none" }}>
+              <h2>News Feed</h2>
+            </Link>
           </div>
           <div className={classes.user}>
             <h1>john</h1>
