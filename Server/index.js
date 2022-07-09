@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
   console.log(err);
 }
 )
-app.use(cors());
+app.use(cors({origin:"*"}));
 app.use(express.json());
 
 app.use("/api",authRoute);

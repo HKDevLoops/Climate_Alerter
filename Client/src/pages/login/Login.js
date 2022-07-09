@@ -1,11 +1,15 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import classes from "./login.module.css";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import KeyIcon from "@mui/icons-material/Key";
 import { useState } from "react";
 import axios from "axios";
+import { store } from "../../App";
+import { Route, useNavigate } from "react-router-dom";
 const Login = () => {
   const [userData,setUserData]=useState({});
+  const [token,setToken]=useContext(store);
+  const navigate=useNavigate();
 
   const changeHandler=(event)=>{
     setUserData((prev)=>{
@@ -20,14 +24,25 @@ const Login = () => {
   const sendData=async(event)=>{
     event.preventDefault();
     console.log(userData);
-    await axios.post("http://localhost:5000/api/login",userData);
+    await axios.post("http://localhost:5000/api/login",userData).then((res)=>{
+      setToken(res.data.token);
+      
 
+    }).catch((err)=>{
+      console.log(err);
+    })
+
+  }
+  if (token){
+    console.log("GOT TOKEN...........");
+    navigate("/aqi");
   }
 
 
   
   return (
     <div className={classes.main_container}>
+    <form>
       <div className={classes.wrapper}>
         <div className={classes.title}>
           <h2>Login</h2>
@@ -66,6 +81,7 @@ const Login = () => {
         </button>
         {/* </div> */}
       </div>
+      </form>
     </div>
   );
 };

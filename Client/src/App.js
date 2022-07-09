@@ -8,24 +8,33 @@ import Footer from "./components/footer/Footer";
 import Facts from "./components/facts/Facts";
 import Register from "./pages/register/register";
 import ApiCalls from  "./components/apicalls/APICalls";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate,Navigate } from "react-router-dom";
+import { createContext, useState } from "react";
 
 import AQI from "./pages/aqi/AQI";
 
+export const store=createContext();
 function App() {
+  const navigate=useNavigate();
+  const [token,setToken]=useState(null);
+
+
   return (
     <div className="App">
+      <store.Provider value={[token,setToken]} >
+  
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={token?<Home />:<Login />} /> 
         <Route path="/news" element={<News />} />
         <Route path="/facts" element={<Facts />} />
-        <Route path="/aqi" element={<AQI />} />
+        {token?<Route path="/aqi" element={<AQI />} /> :<Route path="/login" element={<Login />} />}
         <Route path="/login" element={<Login />} />
         <Route path="/api" element={<ApiCalls />} />
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
+      </store.Provider>
     </div>
   );
 }

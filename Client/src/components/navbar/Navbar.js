@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./navbar.module.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { store } from "../../App";
 const Navbar = () => {
+  const [token,setToken]=useContext(store);
+  const navigate=useNavigate();
+  const clickHandler=()=>{
+    console.log(token);
+    navigate("/login");
+    setToken(null);
+
+
+
+  }
   return (
     <div>
       <div className={classes.wrapper}>
@@ -23,11 +34,18 @@ const Navbar = () => {
               <h2>News Feed</h2>
             </Link>
           </div>
+          <div className={classes.dropdown}>
           <div className={classes.user}>
             <h1>john</h1>
-            <AccountCircleIcon
+            <AccountCircleIcon 
               style={{ fontSize: "35px", cursor: "pointer" }}
+
             />
+              <div className={classes.dropdown_content}>
+              <button className={classes.logout} onClick={clickHandler}>Logout</button>
+
+  </div>
+          </div>
           </div>
         </div>
       </div>

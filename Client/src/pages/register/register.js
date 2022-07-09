@@ -26,7 +26,11 @@ const changeHandler=(event)=>{
     event.preventDefault();
     console.log(userData);
   
-    await axios.post("http://localhost:5000/api/register",userData);
+    await axios.post("http://localhost:5000/api/register",userData).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    });
 
   };
 
