@@ -7,6 +7,7 @@ import Home from "./components/home/Home";
 import Footer from "./components/footer/Footer";
 import Facts from "./components/facts/Facts";
 import Register from "./pages/register/register";
+import ApiCalls from  "./components/apicalls/APICalls";
 import { Routes, Route } from "react-router-dom";
 
 import AQI from "./pages/aqi/AQI";
@@ -21,6 +22,7 @@ function App() {
         <Route path="/facts" element={<Facts />} />
         <Route path="/aqi" element={<AQI />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/api" element={<ApiCalls />} />
         <Route path="/register" element={<Register />} />
       </Routes>
       <Footer />
