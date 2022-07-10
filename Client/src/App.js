@@ -12,6 +12,7 @@ import { Routes, Route, useNavigate,Navigate } from "react-router-dom";
 import { createContext, useState } from "react";
 
 import AQI from "./pages/aqi/AQI";
+import CarbonCalculator from "./pages/carbonCalculator/carbonCalculator";
 
 export const store=createContext();
 function App() {
@@ -25,15 +26,18 @@ function App() {
   
       <Navbar />
       <Routes>
-        <Route path="/" element={token?<Home />:<Login />} /> 
+        {/* <Route path="/" element={token?<Home />:<Login />} />  */}
+        <Route path="/" element={<Home />} />
+        <Route path="/carboncalculator" element={<CarbonCalculator />} />
         <Route path="/news" element={<News />} />
-        <Route path="/facts" element={<Facts />} />
-        {token?<Route path="/aqi" element={<AQI />} /> :<Route path="/login" element={<Login />} />}
+        {/* <Route path="/facts" element={<Facts />} /> */}
+        {/* {token?<Route path="/aqi" element={<AQI />} /> :<Route path="/login" element={<Login />} />} */}
+        <Route path="/aqi" element={<AQI />} />
         <Route path="/login" element={<Login />} />
         <Route path="/api" element={<ApiCalls />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-      <Footer />
+  
       </store.Provider>
     </div>
   );

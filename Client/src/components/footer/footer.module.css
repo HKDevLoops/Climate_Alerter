@@ -17,3 +17,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.icon {
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0px 15px;
+  cursor: pointer;
+}

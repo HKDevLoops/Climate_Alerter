@@ -3,9 +3,11 @@
 import classes from "./facts.module.css"
 import React from 'react'
 import Footer from "../footer/Footer"
-
+import { Fragment } from "react"
+import CarbonCalculator from "../../pages/carbonCalculator/carbonCalculator"
 const Fact = () => {
   return (
+    <Fragment>
     <div className={classes.container}>
     <div className={classes.wrapper}>
 
@@ -28,6 +30,10 @@ const Fact = () => {
    
 
     </div>
+
+ {/* <Footer /> */}
+ <CarbonCalculator />
+    </Fragment>
   )
 }
 

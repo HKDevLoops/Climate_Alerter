@@ -1,0 +1,67 @@
+.container {
+  /* background-color: rebeccapurple; */
+  height: calc(100vh-500px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+  flex-direction: column;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.data {
+  margin-top: -40px;
+  margin-bottom: 60px;
+}
+select {
+  padding: 15px 20px;
+}
+
+.input {
+  /* display: flex; */
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.input input {
+  padding: 10px;
+  border: 0.5px solid rgb(128, 95, 95);
+}
+.btn {
+  margin-top: 30px;
+}
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+}
+.result {
+  /* margin-top: 100px; */
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  height: 200px;
+
+  /* background-color: rebeccapurple; */
+  width: 300px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  margin-top: -70px;
+  margin-bottom: 50px;
+}
+
+.heading {
+  margin-top: 40px;
+}
+.suggestions {
+  background-color: dodgerblue;
+  height: 500px;
+}

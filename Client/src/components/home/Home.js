@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import classes from "./home.module.css";
 import { useEffect } from "react";
 import axios from "axios";
+import Footer from "../footer/Footer";
+import { Fragment } from "react";
+import Fact from "../facts/Facts";
+import carbonCalculator from "../../pages/carbonCalculator/carbonCalculator";
+import CarbonCalculator from "../../pages/carbonCalculator/carbonCalculator";
 const Home = () => {
   const [lat, setLat] = useState("");
   const [log, setLog] = useState("");
@@ -60,6 +65,7 @@ const Home = () => {
   }, [address,curr,lat,log,weatherData]);
 console.log(weatherData);
   return (
+    <Fragment>
     <div className={classes.container}>
       <div className={classes.content}>
         <div className={classes.icon}>
@@ -91,6 +97,12 @@ console.log(weatherData);
         </div>
       </div>
     </div>
+
+    <Fact />
+    {/* <CarbonCalculator /> */}
+    
+
+    </Fragment>
   );
 };
 

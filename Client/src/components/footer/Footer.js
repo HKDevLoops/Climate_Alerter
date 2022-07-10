@@ -12,18 +12,26 @@ const Footer = () => {
       Connect With Us
     </div>
       <div className={classes.wrapper}>
+      <div className={classes.icon}>
         <InstagramIcon
-          style={{ fontSize: "40px", margin: 10, color: "#e95950" }}
+          style={{ fontSize: "40px", margin: 10, color: "#e95950"}}
         />
+        </div>
+        <div className={classes.icon}>
         <GitHubIcon
           style={{ fontSize: "40px", margin: 10, color: "#171515 " }}
         />
+        </div>
+        <div className={classes.icon}>
         <FacebookIcon
           style={{ fontSize: "40px", margin: 10, color: "#4267B2" }}
         />
+        </div>
+        <div className={classes.icon}>
         <TwitterIcon
           style={{ fontSize: "40px", margin: 10, color: "#1DA1F2" }}
         />
+        </div>
       </div>
     </div>
   );
