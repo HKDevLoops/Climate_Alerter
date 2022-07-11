@@ -3,6 +3,7 @@ import classes from "./home.module.css";
 import { useEffect } from "react";
 import axios from "axios";
 import Footer from "../footer/Footer";
+import { useNavigate } from "react-router-dom";
 import { Fragment } from "react";
 import Fact from "../facts/Facts";
 import carbonCalculator from "../../pages/carbonCalculator/carbonCalculator";
@@ -12,7 +13,8 @@ const Home = () => {
   const [log, setLog] = useState("");
   const [address, setAddress] = useState("");
   const [curr, setCurr] = useState("");
-  const [weatherData,setWeatherData]=useState({});
+  const [weatherData, setWeatherData] = useState({});
+  const navigate=useNavigate();
 
   navigator.geolocation.getCurrentPosition((position) => {
     console.log(position.coords.latitude);
@@ -20,10 +22,10 @@ const Home = () => {
     setLat(12.9716);
     setLog(77.5946);
   });
+const handleClick=()=>{
+  navigate("/carboncalculator");
 
-
-
-
+}
   useEffect(() => {
     const getData = async () => {
       try {
@@ -62,46 +64,51 @@ const Home = () => {
       } catch (err) {}
     };
     getData();
-  }, [address,curr,lat,log,weatherData]);
-console.log(weatherData);
+  }, [address, curr, lat, log, weatherData]);
+  console.log(weatherData);
   return (
     <Fragment>
-    <div className={classes.container}>
-      <div className={classes.content}>
-        <div className={classes.icon}>
-          <img src="https://cdn-icons-png.flaticon.com/512/2932/2932445.png" />
-        </div>
-        <div className={classes.data}>
-          <div className={classes.left}>
-            <div className={classes.temp}>
-              <h1
-                style={{
-                  color: "#c5cdcf",
-                  // fontSize: "2.9375em",
-                }}
-              >
-                {/* {weatherData.main.temp} */}
-              </h1>
-            </div>
-            <div className={classes.text}>
-              <h2 style={{ color: "#8f9b9d", fontSize: "1.1875em" }}>
-                Partly cloudy
-              </h2>
-              <h3 style={{ color: "#c5cdcf" }}>{weatherData.name}</h3>
-            </div>
+      <div className={classes.container}>
+        <div className={classes.content}>
+          <div className={classes.icon}>
+            <img src="https://cdn-icons-png.flaticon.com/512/2932/2932445.png" />
           </div>
-          <div className={classes.right}>
-            <div>JUL</div>
-            <div>3</div>
+          <div className={classes.data}>
+            <div className={classes.left}>
+              <div className={classes.temp}>
+                <h1
+                  style={{
+                    color: "#c5cdcf",
+                    // fontSize: "2.9375em",
+                  }}
+                >
+                  {/* {weatherData.main.temp} */}
+                </h1>
+              </div>
+              <div className={classes.text}>
+                <h2 style={{ color: "#8f9b9d", fontSize: "1.1875em" }}>
+                  Partly cloudy
+                </h2>
+                <h3 style={{ color: "#c5cdcf" }}>{weatherData.name}</h3>
+              </div>
+            </div>
+            <div className={classes.right}>
+              <div>JUL</div>
+              <div>3</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <Fact />
-    {/* <CarbonCalculator /> */}
-    
+      <div className={classes.start}>
+      <div className={classes.title}>
+        <h2>Check Your Carbon FootPrint </h2>
+        </div>
+        <button onClick={handleClick}>Click Here</button>
+      </div>
 
+      <Fact />
+      {/* <CarbonCalculator /> */}
     </Fragment>
   );
 };

@@ -42,7 +42,7 @@ const Login = () => {
   
   return (
     <div className={classes.main_container}>
-    <form>
+    {/* <form> */}
       <div className={classes.wrapper}>
         <div className={classes.title}>
           <h2>Login</h2>
@@ -81,7 +81,7 @@ const Login = () => {
         </button>
         {/* </div> */}
       </div>
-      </form>
+      {/* </form> */}
     </div>
   );
 };

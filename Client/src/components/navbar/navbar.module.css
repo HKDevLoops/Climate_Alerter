@@ -87,3 +87,10 @@
   justify-content: center;}
 
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+@media  screen and (max-width:500px) {
+  .link{
+    margin-right: 20px;
+  }
+  
+}

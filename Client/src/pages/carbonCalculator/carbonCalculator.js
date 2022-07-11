@@ -72,22 +72,56 @@ const CarbonCalculator = () => {
             ></input>
           </div>
           <div className={classes.btn}>
-            <button onClick={Calculate}>submit</button>
+            <button onClick={Calculate}><span style={{fontSize:"20px"}}>Calculate</span></button>
           </div>
         </div>
         {showResult && (
-          <div className={classes.result}>
-            <h2 className={classes.title}>Total Emission</h2>
-            <p>
-              <span>{result / 1000}</span>Kg
-            </p>
-          </div>
+          <>
+            <div className={classes.result}>
+              <h2 className={classes.title}>Total Emission</h2>
+              <p>
+                <span>{result / 1000}</span>KgCO2
+              </p>
+            </div>
+
+   
+            <div className={classes.suggestions}>
+              <div className={classes.heading}>
+                <h1>Suggestion's To Reduce Carbon Emission</h1>
+              </div>
+              <div className={classes.content}>
+                <ul className={classes.inner}>
+                  <li>
+                    <h3>
+                      Eat more food that is grown or made locally and less red
+                      meat
+                    </h3>
+                  </li>
+                  <li>
+                    <h3>
+                      {" "}
+                      Use alternative transportation (bus, train, carpool, or
+                      bike) to get to work one day per week
+                    </h3>
+                  </li>
+                  <li>
+                    <h3>
+                      Switch lights off when you leave the room and unplug your
+                      electronic devices when they are not in use
+                    </h3>
+                  </li>
+                  <li>
+                    <h3>
+                      Installing a low-flow showerhead to reduce hot water use
+                      can save 350 pounds of CO2. Taking shorter showers helps,
+                      too
+                    </h3>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </>
         )}
-      </div>
-      <div className={classes.suggestions}>
-        <div className={classes.heading}>
-          <h1>suggestion to reduce Carbon Emission</h1>
-        </div>
       </div>
     </div>
   );

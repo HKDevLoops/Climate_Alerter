@@ -31,8 +31,8 @@ const Fact = () => {
 
     </div>
 
- {/* <Footer /> */}
- <CarbonCalculator />
+ <Footer />
+
     </Fragment>
   )
 }

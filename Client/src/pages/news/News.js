@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classes from "./news.module.css";
 import axios from "axios";
 const News = () => {
+  const title="times india";
   const [newsData,setNewsData]=useState([]);
   // setNewsData([{title:"lol",source:'heading',url:"https://mail.google.com/mail/u/0/#inbox"},{title:"lol",source:'heading',url:"https://mail.google.com/mail/u/0/#inbox"},{title:"lol",source:'heading',url:"https://mail.google.com/mail/u/0/#inbox"}])
   // useEffect(() => {
@@ -54,16 +55,61 @@ const News = () => {
 
     <div className={classes.wrapper}>
     <div className={classes.heading}>
-      <h1>times india</h1>
+      <h1>{title.toUpperCase()}</h1>
     </div>
     <div className={classes.desc}>
-      <p>data.tvzxccccccccccccccvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvccccitleffffjasbkdffsdffffffffffffffasdkbjdfdsfkddddddddddddddddddddddddddasfsfsfasf</p>
+      <p>Lorem Ipsum is simply dummy text y's standard durambled it to makies, but also the leap into electronicf</p>
       {/* <h1>fasf</h1> */}
     </div>
     <div className={classes.link}>
       <button><a href="" alt="newsurl">Website Link</a></button>
     </div>
   </div>
+
+
+  <div className={classes.wrapper}>
+    <div className={classes.heading}>
+      <h1>{title.toUpperCase()}</h1>
+    </div>
+    <div className={classes.desc}>
+      <p>Lorem Ipsum is simply dummy text y's standard durambled it to makies, but also the leap into electronicf</p>
+      {/* <h1>fasf</h1> */}
+    </div>
+    <div className={classes.link}>
+      <button><a href="" alt="newsurl">Website Link</a></button>
+    </div>
+  </div>
+
+
+  <div className={classes.wrapper}>
+    <div className={classes.heading}>
+      <h1>{title.toUpperCase()}</h1>
+    </div>
+    <div className={classes.desc}>
+      <p>Lorem Ipsum is simply dummy text y's standard durambled it to makies, but also the leap into electronicf</p>
+      {/* <h1>fasf</h1> */}
+    </div>
+    <div className={classes.link}>
+      <button><a href="" alt="newsurl">Website Link</a></button>
+    </div>
+  </div>
+
+
+
+  <div className={classes.wrapper}>
+    <div className={classes.heading}>
+      <h1>{title.toUpperCase()}</h1>
+    </div>
+    <div className={classes.desc}>
+      <p>Lorem Ipsum is simply dummy text y's standard durambled it to makies, but also the leap into electronicf</p>
+      {/* <h1>fasf</h1> */}
+    </div>
+    <div className={classes.link}>
+      <button><a href="" alt="newsurl">Website Link</a></button>
+    </div>
+  </div>
+
+
 
     </div>
   );
