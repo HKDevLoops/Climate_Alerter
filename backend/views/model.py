@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class Todo(BaseModel):
     title: str
     description: str
@@ -13,3 +14,6 @@ class Register(Basemodel):
     password : str
     email:  str
     number: str
+
+class cit(BaseModel):
+    city: str
